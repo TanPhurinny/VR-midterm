@@ -5,88 +5,150 @@
     <title>3D Animal Models with Animations</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/supermedium/aframe-event-set-component@4.1.0/dist/aframe-event-set-component.min.js"></script>
+    <script>
+      // JavaScript to handle the mouseenter and mouseleave events
+      document.addEventListener('DOMContentLoaded', function () {
+        const cobra = document.getElementById('cobra');
+        const crab = document.getElementById('crab');
+        const snail = document.getElementById('snail');
+        const turtle = document.getElementById('turtle');
+        const gecko = document.getElementById('gecko');
+        
+        const textCobra = document.getElementById('text__cobra');
+        const textCrab = document.getElementById('text__crab');
+        const textSnail = document.getElementById('text__snail');
+        const textTurtle = document.getElementById('text__turtle');
+        const textGecko = document.getElementById('text__gecko');
+        
+        // Event listeners for mouseenter and mouseleave
+        cobra.addEventListener('mouseenter', function () {
+          textCobra.setAttribute('value', 'Cobra - A venomous snake known for its hood.');
+        });
+        cobra.addEventListener('mouseleave', function () {
+          textCobra.setAttribute('value', 'Cobra');
+        });
+
+        crab.addEventListener('mouseenter', function () {
+          textCrab.setAttribute('value', 'Crab - Found in both freshwater and marine environments.');
+        });
+        crab.addEventListener('mouseleave', function () {
+          textCrab.setAttribute('value', 'Crab');
+        });
+
+        snail.addEventListener('mouseenter', function () {
+          textSnail.setAttribute('value', 'Snail - Known for its slow movement and coiled shell.');
+        });
+        snail.addEventListener('mouseleave', function () {
+          textSnail.setAttribute('value', 'Snail');
+        });
+
+        turtle.addEventListener('mouseenter', function () {
+          textTurtle.setAttribute('value', 'Turtle - Lives both on land and in water.');
+        });
+        turtle.addEventListener('mouseleave', function () {
+          textTurtle.setAttribute('value', 'Turtle');
+        });
+
+        gecko.addEventListener('mouseenter', function () {
+          textGecko.setAttribute('value', 'Gecko - A small lizard known for its climbing ability.');
+        });
+        gecko.addEventListener('mouseleave', function () {
+          textGecko.setAttribute('value', 'Gecko');
+        });
+      });
+    </script>
   </head>
   <body>
     <a-scene>
+      <!-- Add Cursor -->
+      <a-camera>
+        <a-cursor color="yellow" fuse="true" fuse-timeout="1000"></a-cursor>
+      </a-camera>
+
       <h1 style="text-align: center; color: white; font-family: Arial, sans-serif;">Reptiles</h1>
 
       <!-- Cobra -->
       <a-entity 
+        id="cobra"
         gltf-model="url(assets/Cobra.glb)" 
         position="-4 1 -3" 
         scale="0.05 0.05 0.05" 
-        rotation="0 -90 0"
-        event-set__click="animation__dance: property: position; to: -4 1.5 -3; dur: 500; loop: true; dir: alternate">
-        <a-text 
-          value="Cobra" 
-          position="0 1.5 0" 
-          align="center" 
-          color="yellow" 
-          scale="2 2 2">
-        </a-text>
+        rotation="0 -90 0">
       </a-entity>
+      <a-text 
+        id="text__cobra"
+        value="Cobra" 
+        position="-4 2 -3" 
+        align="center" 
+        color="yellow" 
+        scale="1 1 1"> <!-- ลดขนาดข้อความ -->
+      </a-text>
 
       <!-- Crab -->
       <a-entity 
+        id="crab"
         gltf-model="url(assets/Crab.glb)" 
         position="-3 1 -3" 
-        scale="0.02 0.02 0.02"
-        event-set__click="animation__dance: property: rotation; to: 0 360 0; dur: 1000; easing: easeInOutQuad; loop: true">
-        <a-text 
-          value="Crab" 
-          position="0 1.5 0" 
-          align="center" 
-          color="red" 
-          scale="2 2 2">
-        </a-text>
+        scale="0.02 0.02 0.02">
       </a-entity>
+      <a-text 
+        id="text__crab"
+        value="Crab" 
+        position="-3 2 -3" 
+        align="center" 
+        color="red" 
+        scale="1 1 1"> <!-- ลดขนาดข้อความ -->
+      </a-text>
 
       <!-- Snail -->
       <a-entity 
+        id="snail"
         gltf-model="url(assets/Snail.glb)" 
         position="-1 1.5 -3" 
         scale="1 1 1"
-        animation="property: position; to: 1 1.5 -3; dur: 5000; loop: true; dir: alternate;"
-        event-set__click="animation__dance: property: scale; to: 1.2 1.2 1.2; dur: 500; loop: true; dir: alternate">
-        <a-text 
-          value="Snail" 
-          position="0 2.5 0" 
-          align="center" 
-          color="green" 
-          scale="2 2 2">
-        </a-text>
+        animation="property: position; to: 1 1.5 -3; dur: 5000; loop: true; dir: alternate;">
       </a-entity>
+      <a-text 
+        id="text__snail"
+        value="Snail" 
+        position="-1 3 -3" 
+        align="center" 
+        color="green" 
+        scale="1 1 1"> <!-- ลดขนาดข้อความ -->
+      </a-text>
 
       <!-- Turtle -->
       <a-entity 
+        id="turtle"
         gltf-model="url(assets/Turtle Character.glb)" 
         position="1 0.5 -3" 
         scale="0.5 0.5 0.5" 
-        rotation="0 -90 0"
-        event-set__click="animation__dance: property: rotation; to: 0 360 0; dur: 1500; loop: true">
-        <a-text 
-          value="Turtle" 
-          position="0 1.5 0" 
-          align="center" 
-          color="blue" 
-          scale="2 2 2">
-        </a-text>
+        rotation="0 -90 0">
       </a-entity>
+      <a-text 
+        id="text__turtle"
+        value="Turtle" 
+        position="1 3 -3" 
+        align="center" 
+        color="blue" 
+        scale="1 1 1"> <!-- ลดขนาดข้อความ -->
+      </a-text>
 
       <!-- Gecko -->
       <a-entity 
+        id="gecko"
         gltf-model="url(assets/Spotted Gecko.glb)" 
         position="2 2 -3" 
-        scale="1 1 1"
-        event-set__click="animation__dance: property: position; to: 2 2.5 -3; dur: 500; loop: true; dir: alternate">
-        <a-text 
-          value="Gecko" 
-          position="0 2.5 0" 
-          align="center" 
-          color="purple" 
-          scale="2 2 2">
-        </a-text>
+        scale="1 1 1">
       </a-entity>
+      <a-text 
+        id="text__gecko"
+        value="Gecko" 
+        position="2 4 -3" 
+        align="center" 
+        color="purple" 
+        scale="1 1 1"> <!-- ลดขนาดข้อความ -->
+      </a-text>
 
       <!-- Background -->
       <a-entity 
@@ -94,13 +156,13 @@
         position="-5 3 -2" 
         scale="3 3 3" 
         rotation="0 -80 0"></a-entity>
-        <a-sound 
+      <a-sound 
         src=".\sound\1 min Forest Sounds Soothing and Relaxing music for sleeping, stress relief, anxiety, focus, 432Hz [ ezmp3.cc ].mp3"
         autoplay="true" 
         loop="true" 
         volume="0.1"
         position="0 0 0">
-    </a-sound>
+      </a-sound>
       <a-sky src="./pic/6707.jpg"></a-sky>
     </a-scene>
   </body>
