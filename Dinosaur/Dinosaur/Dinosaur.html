@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <title>โมเดล 3 มิติของไดโนเสาร์</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- ระบบ Cursor -->
+      <a-camera position="0 1.6 0">
+        <a-cursor></a-cursor>
+      </a-camera>
+
+      <!-- หัวข้อ -->
+      <a-text value="Dinosur" position="0 2 -4" color="white" scale="6 6 6"
+        align="center"
+        font="https://cdn.aframe.io/fonts/mozillasmall.fnt"></a-text>
+
+      <!-- โมเดลสัตว์ที่ตอบโต้ได้ -->
+      <a-entity
+        gltf-model="url(model/Apatosaurus.glb)"
+        position="-12 -0.7 -10"
+        scale="0.3 0.3 0.3"
+        rotation="0 40 0"
+        class="clickable"
+        animation__dance1="property: position; to: -12 -0.5 -10; dur: 500; dir: alternate; loop: 2; startEvents: click"
+        animation__dance2="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: 1; startEvents: click"
+        event-set__mouseenter="scale: 0.4 0.4 0.4"
+        event-set__mouseleave="scale: 0.3 0.3 0.3">
+        <a-text
+          value="Apatosaurus was a massive herbivorous dinosaur that lived during the Late Jurassic period, around 152–151 million years ago. It measured up to 23 meters (75 feet) long, weighed 20–30 tons, and used its long neck to feed on tall vegetation. Fossils of Apatosaurus have been found in North America, primarily in the Morrison Formation, showcasing its significance in paleontology."
+          position="8 4 1" scale="2 2 2"
+          align="center" color="white" visible="false" class="label"></a-text>
+      </a-entity>
+
+      <a-entity
+        gltf-model="url(model/Parasaurolophus.glb)"
+        position="-3.224 -0.4 -10"
+        scale="0.2 0.2 0.2"
+        rotation="0 10 0"
+        class="clickable"
+        animation__dance1="property: position; to: -3.224 -0.2 -10; dur: 500; dir: alternate; loop: 2; startEvents: click"
+        animation__dance2="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: 1; startEvents: click"
+        event-set__mouseenter="scale: 0.3 0.3 0.3"
+        event-set__mouseleave="scale: 0.2 0.2 0.2">
+        <a-text
+          value="Parasaurolophus was a herbivorous dinosaur known for its distinctive long, curved crest on its head, which may have been used for communication or display. It lived during the Late Cretaceous period, around 76–73 million years ago, and measured about 10 meters (33 feet) in length. Fossils of Parasaurolophus have been found in North America, particularly in Canada and the United States."
+          position="0 8 0" scale="2 2 2"
+          align="center" color="white" visible="false" class="label"></a-text>
+      </a-entity>
+
+      <a-entity
+        gltf-model="url(model/Stegosaurus.glb)"
+        position="3 -0.5 -4"
+        scale="0.3 0.3 0.3"
+        rotation="0 -20 0"
+        class="clickable"
+        animation__dance1="property: position; to: 3 -0.3 -4; dur: 500; dir: alternate; loop: 2; startEvents: click"
+        animation__dance2="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: 1; startEvents: click"
+        event-set__mouseenter="scale: 0.4 0.4 0.4"
+        event-set__mouseleave="scale: 0.3 0.3 0.3">
+        <a-text
+          value="Stegosaurus was a herbivorous dinosaur famous for the two rows of large, bony plates along its back and the spiked tail, called a thagomizer, used for defense. It lived during the Late Jurassic period, around 155–150 million years ago, and measured approximately 9 meters (30 feet) in length. Fossils of Stegosaurus have been discovered in North America, particularly in the Morrison Formation."
+          position="7 4 0" scale="2 2 2"
+          align="center" color="white" visible="false" class="label"></a-text>
+      </a-entity>
+
+      <a-entity
+        gltf-model="url(model/T-Rex.glb)"
+        position="5 -0.5 -1"
+        scale="0.1 0.1 0.1"
+        rotation="0 -20 0"
+        class="clickable"
+        animation__dance1="property: position; to: 5 -0.3 -1; dur: 500; dir: alternate; loop: 2; startEvents: click"
+        animation__dance2="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: 1; startEvents: click"
+        event-set__mouseenter="scale: 0.15 0.15 0.15"
+        event-set__mouseleave="scale: 0.1 0.1 0.1">
+        <a-text
+          value="Tyrannosaurus rex (commonly known as T-Rex) was one of the largest and most fearsome carnivorous dinosaurs. It lived during the Late Cretaceous period, about 68–66 million years ago, and could grow up to 12–13 meters (40–43 feet) in length and weigh around 9 metric tons. With powerful jaws and serrated teeth, T-Rex was a top predator, and its fossils have been found in North America."
+          position="17 7 0" scale="5 5 5" align="center"
+          color="white" visible="false" class="label"></a-text>
+      </a-entity>
+
+      <a-entity
+        gltf-model="url(model/Velociraptor.glb)"
+        position="-1 -0.5 1"
+        scale="0.2 0.2 0.2"
+        rotation="0 0 0"
+        class="clickable"
+        animation__dance1="property: position; to: -1 -0.3 1; dur: 500; dir: alternate; loop: 2; startEvents: click"
+        animation__dance2="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: 1; startEvents: click"
+        event-set__mouseenter="scale: 0.25 0.25 0.25"
+        event-set__mouseleave="scale: 0.2 0.2 0.2">
+        <a-text
+          value="Velociraptor was a small, fast, and agile carnivorous dinosaur that lived during the Late Cretaceous period, about 75–71 million years ago. It measured around 2 meters (6.5 feet) in length, stood 0.5 meters (1.6 feet) tall at the hip, and weighed roughly 15–20 kilograms (33–44 pounds). Velociraptor had sharp claws, including a retractable sickle-shaped claw on each foot, and was likely a pack hunter, with fossils discovered primarily in Mongolia."
+          position="-6.5 3 0" scale="2 2 2"
+          align="center" color="white" visible="false" class="label"></a-text>
+      </a-entity>
+
+      <a-entity
+        gltf-model="url(model/Triceratops.glb)"
+        position="-12 -0.5 2"
+        scale="0.2 0.2 0.2"
+        rotation="0 80 0"
+        class="clickable"
+        animation__dance1="property: position; to: -12 -0.3 2; dur: 500; dir: alternate; loop: 2; startEvents: click"
+        animation__dance2="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: 1; startEvents: click"
+        event-set__mouseenter="scale: 0.25 0.25 0.25"
+        event-set__mouseleave="scale: 0.2 0.2 0.2">
+        <a-text
+          value="Triceratops was a large, herbivorous dinosaur known for its three horns on its face and a large bony frill at the back of its skull. It lived during the Late Cretaceous period, about 68–66 million years ago, and was roughly 9 meters (30 feet) long, 3 meters (10 feet) tall, and weighed up to 12 metric tons. Triceratops primarily fed on low-lying vegetation and is one of the most iconic dinosaurs, with fossils found mainly in North America."
+          position="-8 4 0" scale="2 2 2"
+          align="center" color="white" visible="false" class="label"></a-text>
+      </a-entity>
+
+      <a-entity
+        gltf-model="url(model/Pterablocktyls.glb)"
+        position="2 5 -10"
+        scale="0.5 0.5 0.5"
+        rotation="0 -10 0"
+        class="clickable"
+        animation__dance1="property: position; to: 2 5.2 -10; dur: 500; dir: alternate; loop: 2; startEvents: click"
+        animation__dance2="property: rotation; to: 0 360 0; dur: 1000; easing: linear; loop: 1; startEvents: click"
+        event-set__mouseenter="scale: 0.6 0.6 0.6"
+        event-set__mouseleave="scale: 0.5 0.5 0.5">
+        <a-text
+          value="Pteranodon was a genus of large flying reptiles that lived during the Late Cretaceous period, around 70–100 million years ago. It had an impressive wingspan of 5 to 10 meters (16 to 33 feet), making it one of the largest known flying animals. Pteranodons had long, toothless beaks and were likely fish-eaters, using their long wings for soaring and gliding over water. Fossils have been found in North America, especially in Kansas."
+          position="6 -1 0" scale="2 2 2"
+          align="center" color="white" visible="false" class="label"></a-text>
+      </a-entity>
+
+      <!-- ธรรมชาติ -->
+      <a-entity
+        gltf-model="url(model/Nature.glb)"
+        position="-6 0 -3"
+        scale="10 10 10"
+        rotation="0 60 0">
+      </a-entity>
+
+      <!-- ฉาก -->
+      <a-sky src="./img/6707.jpg"></a-sky>
+      <a-sound
+        src="./sound/1 min Forest Sounds Soothing and Relaxing music for sleeping, stress relief, anxiety, focus, 432Hz [ ezmp3.cc ].mp3"
+        autoplay="true"
+        loop="true"
+        volume="0.5"
+        position="0 0 0">
+      </a-sound>
+
+    </a-scene>
+
+    <script>
+     // เพิ่มเสียงเมื่อคลิก
+document.querySelectorAll('.clickable').forEach(entity => {
+  entity.addEventListener('click', () => {
+    const sound = document.createElement('a-sound');
+    sound.setAttribute('src', 'url(sound/monster-roar-131214.mp3)'); // เพิ่มเสียงที่ต้องการ
+    sound.setAttribute('autoplay', 'true');
+    entity.appendChild(sound);
+  });
+
+
+
+        // แสดงชื่อเมื่อเมาส์ชี้
+        entity.addEventListener('mouseenter', () => {
+          const label = entity.querySelector('.label');
+          if (label) label.setAttribute('visible', 'true');
+        });
+
+        entity.addEventListener('mouseleave', () => {
+          const label = entity.querySelector('.label');
+          if (label) label.setAttribute('visible', 'false');
+        });
+      });
+    </script>
+  </body>
+</html>
