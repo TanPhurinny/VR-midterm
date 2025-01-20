@@ -22,11 +22,14 @@
         
         // Event listeners for mouseenter and mouseleave
         cobra.addEventListener('mouseenter', function () {
-          textCobra.setAttribute('value', 'Cobra - A venomous snake known for its hood.');
-        });
-        cobra.addEventListener('mouseleave', function () {
-          textCobra.setAttribute('value', 'Cobra');
-        });
+  textCobra.setAttribute('value', 'Cobra - A venomous snake known for its hood.');
+  textCobra.setAttribute('position', { x: -4, y: 3, z: -3 }); // ปรับตำแหน่งข้อความขณะ hover
+});
+
+cobra.addEventListener('mouseleave', function () {
+  textCobra.setAttribute('value', 'Cobra');
+});
+
 
         crab.addEventListener('mouseenter', function () {
           textCrab.setAttribute('value', 'Crab - Found in both freshwater and marine environments.');
@@ -37,6 +40,8 @@
 
         snail.addEventListener('mouseenter', function () {
           textSnail.setAttribute('value', 'Snail - Known for its slow movement and coiled shell.');
+            textSnail.setAttribute('position', { x: -2  , y: 3, z: -4 }); // ปรับตำแหน่งข้อความขณะ hover
+
         });
         snail.addEventListener('mouseleave', function () {
           textSnail.setAttribute('value', 'Snail');
